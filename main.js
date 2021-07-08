@@ -38,16 +38,30 @@ function setBgGreet() {
   let today = new Date(),
     hour = today.getHours();
 
+    if (hour < 6) {
+      //Early Morning
+      document.body.style.backgroundImage = "url('./images/early-morning.jpg')";
+      greeting.textContent = "Good Morning, ";
+    }else   if (hour < 9) {
+      //Mid Morning
+      document.body.style.backgroundImage = "url('./images/mid-morning.jpg')";
+      greeting.textContent = "Good Morning, ";
+    }
   if (hour < 12) {
-    // Morning
-    document.body.style.backgroundImage = "url('./images/morning.jpg')";
+    //Late Morning
+    document.body.style.backgroundImage = "url('./images/late-morning.jpg')";
     greeting.textContent = "Good Morning, ";
-  } else if (hour < 18) {
+  }else  if (hour < 16) {
     // Afternoon
-    document.body.style.backgroundImage = "url('images/afternoon.jpg')";
+    document.body.style.backgroundImage = "url('./images/afternoon.jpg')";
+    greeting.textContent = "Good Morning, ";
+  }
+   else if (hour < 19) {
+    // Evening
+    document.body.style.backgroundImage = "url('images/evening.jpg')";
     greeting.textContent = "Good Afternoon, ";
   } else {
-    // Evening
+    // Night
     document.body.style.backgroundImage = "url('./images/night.jpg')";
     greeting.textContent = "Good Evening, ";
     document.body.style.color = "white";
